@@ -41,6 +41,12 @@ Open Claude Code with the cloned LOCK IN folder as the working directory, same c
 before. From now on this folder is synced with git like the code: commit and push doc changes
 at the end of a session, pull at the start of one.
 
+**Setup status, checked 19 August on the new machine:** steps 0, 1, 2 and 4 are done
+(typecheck clean, 10/10 gate tests passing, skills unzipped). Step 3 is half done:
+`.env.local` was recreated from `.env.example` and `BETTER_AUTH_SECRET` plus `ADMIN_PASSWORD`
+were generated. `DATABASE_URL`, `ANTHROPIC_API_KEY`, the Stripe keys and the public contact
+details are still empty and are the founder's to fill. Delete this file once they are in.
+
 ## State of play, one paragraph
 
 Landing page, estimator, legal pages and the book-a-call pipeline are built and deployed. The

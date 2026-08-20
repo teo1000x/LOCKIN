@@ -41,12 +41,14 @@ so the reversal back to the connected model costs no schema rework.
 
 **The trade taxonomy is 96 trades across 17 categories**, in `src/lib/trades.ts`. Any doc,
 prompt, or wizard field that still assumes four trades (HVAC, plumbing, roofing, electrical)
-is stale. Four trades carry `researched: true`, meaning we have read their live ads in the Ad
+is stale. Five trades carry `researched: true`, meaning we have read their live ads in the Ad
 Library. The other 91 run on category-level patterns and every surface must say so in those
 words rather than implying research we have not done.
 
-**Three environment keys block all server work:** `DATABASE_URL`, `ANTHROPIC_API_KEY`,
-`BETTER_AUTH_SECRET`. Nothing in Track B past B1.5 can start without them.
+**Two environment keys still block all server work:** `DATABASE_URL` and `ANTHROPIC_API_KEY`.
+`.env.local` was created 19 August from `.env.example`, with `BETTER_AUTH_SECRET` and
+`ADMIN_PASSWORD` generated. Nothing in Track B past B1.5 can start without the two missing
+keys.
 
 **Pricing is $499, $1,300 and $2,500 per month.**
 
@@ -81,7 +83,7 @@ and almost none of it is engineering.
 | A4 | Screencast walkthrough App Review requires, showing each permission in use | OP | Needs enough UI to record. The only part of this track gated on code. |
 | A5 | Meta identity verification for the Ad Library API, government ID, one time, separate from A2 and A3 and needs no App Review | YOU | NOT STARTED |
 | A6 | Lawyer review of `/terms`, `/privacy` and `/refunds` before the first customer is charged | YOU | NOT STARTED |
-| A7 | **Rewrite `/refunds` and the landing page value band to the no-refund policy.** A live page currently promises a refund the business will not honour. | OP | NOT STARTED, urgent |
+| A7 | Rewrite `/refunds` and the landing page value band to the no-refund policy | OP | **DONE**, deployed 19 August. `/refunds` states sales are final in its first line. |
 
 **A4 is the only ordering constraint between this track and Track B.** Verification and the
 permission request can be prepared and filed before the wizard exists. Do not let the build
@@ -106,9 +108,9 @@ schedule become the reason the filing is late.
 |---|---|---|---|
 | B1.1 | Next.js 16, TypeScript, Tailwind v4 scaffold | OP | **DONE** |
 | B1.2 | Database schema including `metaConnections` | OP | **DONE**, valid under the connected model |
-| B1.3 | Approval gate, pure logic plus database guard, 7 tests passing | OP | **DONE**, inviolable, do not rewrite |
+| B1.3 | Approval gate, pure logic plus database guard, 10 tests passing | OP | **DONE**, inviolable, do not rewrite |
 | B1.4 | Envelope encryption for customer tokens, `crypto.ts` | OP | **DONE**, now load-bearing again |
-| B1.5 | `DATABASE_URL`, `ANTHROPIC_API_KEY`, `BETTER_AUTH_SECRET` in `.env.local` | YOU | **BLOCKING everything below** |
+| B1.5 | `DATABASE_URL`, `ANTHROPIC_API_KEY`, `BETTER_AUTH_SECRET` in `.env.local` | YOU | `BETTER_AUTH_SECRET` and `ADMIN_PASSWORD` generated 19 Aug. `DATABASE_URL` and `ANTHROPIC_API_KEY` still missing, **BLOCKING everything below** |
 | B1.6 | Provision Postgres, run the first migration | YOU + OP | Blocked by B1.5 |
 | B1.7 | Better Auth with organizations | OP | Blocked by B1.5 |
 | B1.8 | Stripe subscriptions at $499 / $1,300 / $2,500, billing portal | OP | Needs your Stripe account |
@@ -279,7 +281,7 @@ tester.
 | Risk | Severity | Mitigation |
 |---|---|---|
 | App Review and Business Verification not filed, 8 to 12 weeks of queue not yet started | **CRITICAL, ACTIVE** | Track A. File this week. Neither needs code. |
-| A live page promises a 14 day refund the business will not honour | **CRITICAL, ACTIVE** | A7. Rewrite `/refunds` and the landing page value band. |
+| A live page promised a 14 day refund the business will not honour | RESOLVED 19 August | A7 shipped. `/refunds` and the landing page now state sales are final. |
 | No name and no domain, which now blocks the filing | **CRITICAL, ACTIVE** | A1 and B0.1 |
 | No distribution, no customers | CRITICAL | Track C starts this week. The estimator is live and is a real conversation opener. |
 | Owner cannot complete the interim export handoff alone | HIGH | Researched verdict says a typical non-technical owner working from a static document is unlikely to succeed first try. B5.8 plus C5. Shrinks to zero once publishing lands. |
@@ -295,13 +297,13 @@ tester.
 # CURRENT STATE
 
 **Done:** landing page, estimator, three legal pages, all deployed. Next.js scaffold, database
-schema, approval gate with 7 passing tests, envelope encryption, content hashing, the 96-trade
-taxonomy. Nineteen strategy and spec documents, four research reports.
+schema, approval gate with 10 passing tests, envelope encryption, content hashing, the 96-trade
+taxonomy. Twenty-five strategy and spec documents, four research reports.
 
 **Mock only:** the logged-in shell at `/app`.
 
-**Blocked on you:** App Review, Business Verification, the name and domain, the three
-environment keys, the ad playbook, the lawyer.
+**Blocked on you:** App Review, Business Verification, the name and domain, the two remaining
+environment keys (`DATABASE_URL`, `ANTHROPIC_API_KEY`), the ad playbook, the lawyer.
 
 **Next, in order:** file Track A, fix the refund copy, then auth and the wizard against the
 real taxonomy.

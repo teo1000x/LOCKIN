@@ -14,22 +14,23 @@ Two directories, on purpose.
 
 | | Path | Contains |
 |---|---|---|
-| Docs | `~/Library/Mobile Documents/com~apple~CloudDocs/LOCK IN/` | Strategy, research, specs. In iCloud so it syncs across devices. |
-| Code | `~/Projects/ignition/` | The Next.js application. On local disk. |
+| Docs | `~/Documents/LOCK IN/` | Strategy, research, specs. Private git repo (github.com/teo1000x/lockin), cloned per machine. Pull at session start, commit and push at session end. |
+| Code | `~/Projects/ignition/` | The Next.js application. Separate private repo (github.com/teo1000x/SAAS). |
 
-**Never move the application into iCloud.** `node_modules` under iCloud sync produces file
-locks, conflicted copies, and build failures that look like code bugs. The session's working
-directory is the docs folder, so most code work needs an explicit path or `--prefix`.
+**Never move either folder into iCloud.** The machines use different Apple IDs, so iCloud does
+not carry the docs, and `node_modules` under iCloud sync produces file locks, conflicted
+copies, and build failures that look like code bugs. The session's working directory is the
+docs folder, so most code work needs an explicit path or `--prefix`.
 
 ---
 
 ## Current phase
 
-**Strategy and foundations. Application feature work is paused by the founder.**
-
-Do not start building product features. If asked to build UI or features, confirm the pause
-has been lifted first. Existing code (schema, encryption, approval gate) is settled and
-should not be rewritten.
+**Track A filing plus foundation build.** The feature-work pause was lifted 19 August when
+backend work started (see `ROADMAP.md`). Build order is Track B: auth with organizations,
+then the intake wizard on the 96-trade taxonomy, then generation. Server-side work is blocked
+until `DATABASE_URL` and `ANTHROPIC_API_KEY` land in `.env.local`. Existing settled code
+(schema, encryption, approval gate) is not rewritten.
 
 ---
 

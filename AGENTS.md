@@ -160,7 +160,7 @@ Never accept an agent's summary as fact. Verify:
 ## Repository layout
 
 ```
-LOCK IN/                      docs, research, strategy. Lives in iCloud.
+LOCK IN/                      docs, research, strategy. Private git repo, cloned per machine.
   ROADMAP.md                  master plan, three tracks, ownership
   CLAUDE.md                   Claude Code project instructions
   AGENTS.md                   this file
@@ -178,7 +178,7 @@ LOCK IN/                      docs, research, strategy. Lives in iCloud.
   src/lib/trades.ts           96 trades, 17 categories. The taxonomy.
   src/lib/market.ts           real Ad Library advertisers for researched trades
   src/lib/mock.ts             mock data for the app shell. Never a marketing surface.
-  src/lib/__tests__/          gate tests, currently 7 passing
+  src/lib/__tests__/          gate tests, currently 10 passing
   src/app/page.tsx            landing page, deployed
   src/app/estimate/           estimator, deployed
   src/app/{terms,privacy,refunds}/  legal pages, deployed, not lawyer reviewed
@@ -187,8 +187,9 @@ LOCK IN/                      docs, research, strategy. Lives in iCloud.
 
 Built and deployed: landing page, estimator, legal pages. Mock only: the logged-in shell.
 Not built at all: auth, billing, wizard, generation, competitive read, publishing, leads.
-`DATABASE_URL`, `ANTHROPIC_API_KEY` and `BETTER_AUTH_SECRET` are missing and block all server
-work. If a task assumes a working database or a logged-in user, check `ROADMAP.md` first.
+`DATABASE_URL` and `ANTHROPIC_API_KEY` are missing and block all server work
+(`BETTER_AUTH_SECRET` and `ADMIN_PASSWORD` were generated 19 August when `.env.local` was
+created). If a task assumes a working database or a logged-in user, check `ROADMAP.md` first.
 
 The application deliberately lives outside iCloud. `node_modules` inside iCloud causes sync
 conflicts and phantom build failures. Do not move it back.
