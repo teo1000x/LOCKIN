@@ -164,7 +164,7 @@ LOCK IN/                      docs, research, strategy. Private git repo, cloned
   ROADMAP.md                  master plan, three tracks, ownership
   CLAUDE.md                   Claude Code project instructions
   AGENTS.md                   this file
-  docs/                       numbered specs, 00 through 18
+  docs/                       numbered specs, 00 through 24
   research/                   four source research reports with citations
   tools/yt-transcribe.py      pull YouTube captions to text
   transcripts/                transcription output
@@ -213,6 +213,10 @@ conflicts and phantom build failures. Do not move it back.
 | `docs/08-DESIGN-SYSTEM.md` | Binding visual specification |
 | `docs/09-SIX-PS.md` | Pain, Promise, Product, Plumbing, Packaging, Proof |
 | `docs/10-CLIENT-HANDOFF.md` | Client journey, onboarding, support, offboarding |
+| `docs/21-NAME-AND-LOGO.md` | Name recommendation: Bonded Crew, bondedcrew.com |
+| `docs/22-INTAKE-QUESTIONS.md` | The six-question intake and optional depth section |
+| `docs/23-META-FILING-CHECKLIST.md` | Founder's click-by-click Meta filing guide |
+| `docs/24-BUSINESS-VERIFICATION-PREP.md` | Verification prep: CANU Group LLC facts, EIN walkthrough |
 | `research/01` through `research/04` | Source research with citations |
 
 ---

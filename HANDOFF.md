@@ -18,8 +18,11 @@ reading this, this file plus `AGENTS.md` is your warm start. Read `AGENTS.md` ne
 
 ```bash
 # 0. This folder first. The machines use different Apple IDs, so iCloud does
-#    not carry it. It lives in a private repo instead:
-git clone https://github.com/teo1000x/lockin.git ~/Documents/LOCK\ IN
+#    not carry it. It lives in a private repo instead (renamed to LOCKIN on
+#    GitHub 19 Aug). The old machine's iCloud copy is frozen and stale; the
+#    git repo is the only current copy, so always clone or pull, never work
+#    from the iCloud folder:
+git clone https://github.com/teo1000x/LOCKIN.git ~/Documents/LOCK\ IN
 
 # 1. Code. On local disk, in its own separate clone.
 git clone https://github.com/teo1000x/SAAS.git ~/Projects/ignition
@@ -54,12 +57,30 @@ approval gate is hardened (bytes and composited text in the hash, 10 tests passi
 /admin/leads queue exists behind fail-closed basic auth. Everything server-side is dark until
 DATABASE_URL is set. The product name recommendation is Bonded Crew (`docs/21`,
 bondedcrew.com verified free 19 Aug). The Meta filings are NOT started and are the critical
-path (`docs/23` is the founder's click-by-click guide).
+path (`docs/23` is the founder's click-by-click guide, `docs/24` is the verification prep,
+now largely resolved: the entity is CANU Group LLC, Wyoming, Active, Articles PDF in hand).
+
+## Session log, 19 August evening (new machine)
+
+Setup verified: typecheck clean, 10/10 gate tests passing. `.env.local` recreated from
+`.env.example` with `BETTER_AUTH_SECRET` and `ADMIN_PASSWORD` generated; `DATABASE_URL` and
+`ANTHROPIC_API_KEY` still missing. `.env.local` never travels by git, so on another machine
+either AirDrop it or regenerate the same way. Docs synced to verified state.
+`docs/24-BUSINESS-VERIFICATION-PREP.md` written and mostly resolved: legal name CANU Group
+LLC (filed Wyoming 26 April 2026, confirmed Active), business address 3637 Keystone Ave, Los
+Angeles, CA 90034, Articles PDF in the founder's Downloads as `images.pdf` (rename it).
+bondedcrew.com still free at midnight Eastern 19/20 Aug.
+
+**Tomorrow, in order:** EIN at the irs.gov EIN Assistant (opens 7 a.m. Eastern, walkthrough
+in `docs/24`), buy bondedcrew.com and create hello@, enable 2FA on the personal Facebook,
+then `docs/23` steps 2 and 3 (Business Portfolio as CANU Group LLC, submit verification).
+Tell the operator as each lands so the checklists get checked off.
 
 ## Open founder decisions, carried forward
 
 1. Buy bondedcrew.com, then the sitewide rename can happen in one commit.
-2. Meta: Business Portfolio + Business Verification + dev app (`docs/23`, tonight's job).
+2. EIN for CANU Group LLC, then Business Portfolio + Business Verification + dev app
+   (`docs/23` and `docs/24`, tomorrow morning's job).
 3. Fill .env.local: DATABASE_URL (Supabase pooler), ANTHROPIC_API_KEY, contact email/phone.
 4. Sold-out Starter tier: keep, flip, or real count (docs/20 crack 2).
 5. Authorise-do-not-charge risk reversal: yes or no (docs/20 section 3.1).
