@@ -12,16 +12,12 @@ confirmed.**
 
 ## Founder checklist, in order
 
-1. **Confirm the LLC is Active.** Wyoming requires a $60 annual report yearly with a 60-day
-   grace period; after that the LLC goes delinquent, then administratively dissolved.
-   An idle LLC is exactly the kind that lapses. Check the status on the Wyoming Secretary of
-   State business search (wyobiz.wyo.gov). Delinquent: file the annual report online
-   immediately. Dissolved: reinstatement is $100 plus back fees, and the timeline changes,
-   so surface it right away.
-2. **EIN.** If none exists, apply free at irs.gov (never a paid third-party site); the CP-575
-   confirmation letter arrives instantly as a PDF and is the strongest single verification
-   document. If the letter is lost, call the IRS for a replacement 147C. Articles of
-   Organization alone can carry verification, but having both doubles the document options.
+1. **Confirm the LLC is Active.** **DONE, 19 August: founder checked the Wyoming SOS search
+   and the LLC shows Active.**
+2. **EIN.** **IN PROGRESS.** Apply free at irs.gov (never a paid third-party site); the
+   CP-575 confirmation letter arrives instantly as a PDF and is the strongest single
+   verification document. Full walkthrough in the "Step 2 walkthrough" section below. If a
+   past EIN's letter is lost, call the IRS for a replacement 147C.
 3. **Documents as PDFs.** Articles of Organization plus the EIN letter (CP-575 or 147C).
    High-resolution, uncropped, full-page scans. State and IRS issued documents only;
    self-prepared tax filings are not accepted.
@@ -41,6 +37,41 @@ confirmed.**
    login and Meta requires 2FA for admins of verified businesses. An aged, real account in
    good standing helps.
 8. **A phone that can receive the verification call or text.**
+
+## Step 2 walkthrough: the EIN, click by click
+
+The founder does this personally: the form asks for the owner's name and SSN, which never
+pass through chat or an agent. Free, roughly 15 minutes, and the number is issued instantly.
+
+0. **Check for an existing EIN first.** If the LLC ever opened a bank account or filed
+   anything, it already has one, and the IRS allows only one per entity. Look in the
+   formation paperwork or bank records. Found one but no letter: call the IRS Business line
+   (800-829-4933) and ask for a 147C letter instead of applying again.
+1. **Hours.** The EIN Assistant runs Monday to Friday, 7 a.m. to 10 p.m. Eastern. Outside
+   those hours the tool is simply offline; do it in the morning if tonight is closed.
+2. Go to irs.gov and search "apply for an EIN online". Use only the irs.gov EIN Assistant.
+   Any site that charges is a middleman.
+3. Entity type: **Limited Liability Company.** State: Wyoming. Number of members: as on the
+   Articles (one member makes it a disregarded entity by default; two or more defaults to
+   partnership taxation; both are fine for verification and can be revisited with an
+   accountant later).
+4. Reason for applying: **Started a new business.**
+5. Responsible party: the founder's own legal name and SSN. This is the human behind the
+   entity; it cannot be another company.
+6. Business name and address: the exact legal name from the Articles, and the same address
+   the Meta profile will use (see checklist item 5 on matching the documents).
+7. Date business started: the LLC's formation date from the Articles.
+8. Employees: none. Highway vehicles, gambling, excise, alcohol/tobacco/firearms: no.
+9. What the business does: Other, then describe as software or advertising services. This
+   field carries no weight for Meta.
+10. **Delivery: choose "receive letter online."** Download the CP-575 PDF immediately and
+    save it in two places. The IRS never re-issues a CP-575; a replacement is a 147C by
+    phone, which takes a call and a fax.
+11. One EIN is issued per responsible party per day, and the session times out after 15
+    minutes idle, so have the Articles open before starting.
+
+Done when: the CP-575 PDF is saved and legible, and the name on it matches the Articles
+character for character.
 
 ## The submit-state test
 
