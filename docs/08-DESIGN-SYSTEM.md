@@ -287,19 +287,19 @@ margins.
 
 ### 3.B Corner radius (one locked scale)
 
-Four values total, each with a documented, exhaustive rule for where it applies. Nothing outside
+Three values total, each with a documented, exhaustive rule for where it applies. Nothing outside
 this list.
 
 | Token | Value | Applies to (exhaustive) |
 |---|---|---|
-| `radius-sm` | 6px | Checkboxes, small tags, inline chips |
+| `radius-sm` | 6px | Checkboxes, small tags, inline chips, status badges, lead-status tags |
 | `radius-md` | 10px | Buttons, form inputs, dropdowns, select menus - the default interactive radius |
 | `radius-lg` | 16px | Cards, modals, the wizard step panel, the ad-preview card container |
-| `radius-full` | 9999px | Status pill badges only ("Optimizing," "Booked," lead-status tags) |
 
-`radius-full` is the one documented exception to an otherwise-flat scale, matching the
-pill-badge-with-status-dot pattern already established as this product's status idiom. It is never
-used on buttons, cards, or inputs - only on the small pill badges that carry a state word.
+Pill shapes (`border-radius: 9999px`) are banned everywhere except the progress bar's rounded
+end caps, which are a track, not a control. Founder decision, 20 August 2026: no circular
+buttons, chips, or badges anywhere in the product or marketing surfaces. Status badges use
+`radius-sm` and keep their state word; the pill-with-status-dot idiom is retired.
 
 ### 3.C Border and hairline conventions
 
@@ -379,7 +379,7 @@ phone between jobs):
 [ Optional 1-line helper under the H1, 14px, text-secondary ]
 [ Input or choice group, single focus target ]
 [ Inline AI suggestion chip, when applicable: --accent-subtle bg, --accent text,
-  radius-full, e.g. "Most A/C repair shops in your area average $340-420" ]
+  radius-sm, e.g. "Most A/C repair shops in your area average $340-420" ]
 [ Footer bar, sticky on mobile: Back (secondary button) + Continue (primary button, lg) ]
 ```
 
@@ -516,7 +516,8 @@ of the taste skill. Anything on this list is a shipped-broken result, not a styl
 - [ ] Any button, badge, or status chip with a colored dot that does not represent real state.
       The green "Optimizing" dot on the dashboard is legitimate (real campaign state); a
       decorative dot in front of a nav link or a static label is not.
-- [ ] Mixed corner-radius systems outside the four documented values in Section 3.B.
+- [ ] Mixed corner-radius systems outside the three documented values in Section 3.B, and any
+      pill shape outside the progress bar.
 
 **Typography and copy**
 - [ ] Any serif font anywhere in the product.
@@ -580,8 +581,8 @@ gate, not a suggestion.
 - [ ] No button label wraps to a second line at any supported width.
 - [ ] No two CTAs on the same page carry the same intent under different words.
 - [ ] Every multi-column layout has an explicit, tested `< 768px` single-column fallback.
-- [ ] Corner radius on every element traces back to one of the four values in Section 3.B, with
-      no undocumented exceptions.
+- [ ] Corner radius on every element traces back to one of the three values in Section 3.B, with
+      no undocumented exceptions and no pill shapes.
 - [ ] No section-layout family (card grid, split image/text, full-width quote) repeats more than
       twice in a row on the marketing site.
 
