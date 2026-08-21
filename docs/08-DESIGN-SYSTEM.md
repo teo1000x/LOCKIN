@@ -301,6 +301,12 @@ end caps, which are a track, not a control. Founder decision, 20 August 2026: no
 buttons, chips, or badges anywhere in the product or marketing surfaces. Status badges use
 `radius-sm` and keep their state word; the pill-with-status-dot idiom is retired.
 
+Exempt from the ban: elements that reproduce someone else's surface at native geometry. The
+Facebook feed avatar in an ad preview stays circular because Facebook draws it circular, and
+the price medallion inside the composited ad creative stays a disc because `docs/19` zone C
+specifies a disc. The ban governs our interface, not honest reproductions of other surfaces
+or of the ad artwork.
+
 ### 3.C Border and hairline conventions
 
 - Default divider / hairline: `1px solid var(--border)`. Used for `divide-y` row separators
