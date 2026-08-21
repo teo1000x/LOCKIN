@@ -76,6 +76,28 @@ in `docs/24`), buy bondedcrew.com and create hello@, enable 2FA on the personal 
 then `docs/23` steps 2 and 3 (Business Portfolio as CANU Group LLC, submit verification).
 Tell the operator as each lands so the checklists get checked off.
 
+## Machine switch, 20 Aug evening: work machine back to home machine
+
+Git carries everything except secrets. On the home machine, in order:
+
+1. **AirDrop `~/Projects/ignition/.env.local` from the work machine first.** It now holds
+   the live DATABASE_URL (rotated password), ANTHROPIC_API_KEY, FAL_KEY, and the current
+   BETTER_AUTH_SECRET and ADMIN_PASSWORD. Reveal it in Finder with Cmd+Shift+. and drop it
+   into `~/Projects/ignition/` on the other machine, replacing whatever is there. Without
+   this, server work is dark on that machine.
+2. `cd ~/Documents/LOCK\ IN && git pull` (this folder).
+3. `cd ~/Projects/ignition && git pull && git checkout wip/wizard-lint && npm install`
+   (new deps landed today: satori, resvg, fontsource).
+4. Sanity check: `npx tsc --noEmit && npx tsx --test src/lib/__tests__/*.test.ts`
+   (expect 101 passing).
+5. If commits from that machine ever show "Blocked" on Vercel again, set the identity:
+   `git config --global user.name "Mateo Canu"` and
+   `git config --global user.email "mateo4canu@gmail.com"`. That exact misconfig cost an
+   hour today on the work machine.
+
+Then open Claude Code in the LOCK IN folder and say "read HANDOFF.md, pick up where we
+left off." The session log below plus `docs/25` carry the full state.
+
 ## Session log, 20 August (work machine): the build day
 
 `docs/25-GENERATOR-BUILD-SPEC.md` is the file of record; its checklist carries per-item
