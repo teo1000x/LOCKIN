@@ -164,14 +164,14 @@ merges. YOU = founder.
 
 | # | Item | Owner | Gate |
 |---|---|---|---|
-| 0 | Keys into `.env.local`: DATABASE_URL, ANTHROPIC_API_KEY, FAL_KEY | YOU | Blocks 2+ |
-| 1 | Site fixes batch (section 7): radii + docs/08 amendment, % glyph, pricing credits, ten-questions copy | AGENT | None; ships immediately after review |
-| 2 | Provision Postgres, first migration runs, booking pipeline lights up | YOU + OP | 0 |
-| 3 | Better Auth + organizations; Stripe checkout, webhook, billing portal | AGENT, OP reviews | 2 |
-| 4 | Credits ledger + metering module + per-org ceilings | OP | 2 |
-| 5 | Intake flow, ten screens per section 3, autosave, taxonomy autocomplete | AGENT | 3 |
-| 6 | Blueprint schema + generation pipeline stages 1-3 | AGENT for schema/prompts, OP for injection hardening and lint | 4 |
-| 7 | Deterministic compositor per docs/19 (zones, budgets, contrast, fallbacks) | AGENT, OP verifies determinism and hash coverage | none (pure code, can parallel 5-6) |
+| 0 | Keys into `.env.local`: DATABASE_URL, ANTHROPIC_API_KEY, FAL_KEY | YOU | **DONE 20 Aug**, all three verified working |
+| 1 | Site fixes batch (section 7) | AGENT | **DONE 20 Aug**, deployed and verified on production |
+| 2 | Provision Postgres, first migration runs, booking pipeline lights up | YOU + OP | **DONE 20 Aug** (Supabase, 4 migrations applied) |
+| 3 | Better Auth + organizations (DONE 20 Aug, live on production); Stripe checkout, webhook, billing portal (waiting on founder's Stripe account) | AGENT, OP reviews | Stripe keys |
+| 4 | Credits ledger + metering module + per-org ceilings | OP | **DONE 20 Aug**, 8 tests |
+| 5 | Intake flow, ten screens per section 3, autosave, taxonomy autocomplete | AGENT | **BUILT 20 Aug**, on branch `wip/wizard-lint`, operator review pending |
+| 6 | Blueprint schema + generation pipeline stages 1-3 | AGENT for schema/prompts, OP for injection hardening and lint | Lint and prompt hardening written on `wip/wizard-lint`, tests pending; pipeline itself not started |
+| 7 | Deterministic compositor per docs/19 (zones, budgets, contrast, fallbacks) | AGENT, OP verifies determinism and hash coverage | **DONE 20 Aug**, 68 tests, byte-determinism verified |
 | 8 | Persist + hash + approval workspace wired to `publish-guard.ts` | OP | 6, 7 |
 | 9 | Export walkthrough page with Copy buttons and AI disclosure | AGENT | 8 |
 | 10 | Dashboard home: credits, empty states, measured/reported labelling | AGENT | 3 |

@@ -76,6 +76,34 @@ in `docs/24`), buy bondedcrew.com and create hello@, enable 2FA on the personal 
 then `docs/23` steps 2 and 3 (Business Portfolio as CANU Group LLC, submit verification).
 Tell the operator as each lands so the checklists get checked off.
 
+## Session log, 20 August (work machine): the build day
+
+`docs/25-GENERATOR-BUILD-SPEC.md` is the file of record; its checklist carries per-item
+status. Summary: founder approved the spec; all three keys are in `.env.local` on the work
+machine and verified; Supabase provisioned, 4 migrations applied; site fixes deployed
+(squared radii, sans %, credits per tier at 400/1,600/4,000, ten-questions claim); the
+deterministic compositor (68 tests) and credit metering (8 tests) are DONE and on main;
+Better Auth with organizations is live on production. Vercel deploys were unblocked by
+setting the machine's git identity (was unset, Vercel blocked unknown authors) and by
+re-entering env vars that an early import had saved with empty values. Production verified
+end to end at saas-eight-ebon-56.vercel.app. Test users op-test@example.com,
+op-test2@example.com, wizard-check-3002@example.com exist in the dev database.
+
+**Branch `wip/wizard-lint` holds unmerged work:** the agent-built ten-screen intake wizard
+(101 tests passed on the agent's run, operator review NOT yet done), the policy lint
+(`src/lib/policy-lint.ts`, deterministic docs/14 rules, tests not yet written), and prompt
+injection hardening (`src/lib/prompt-safety.ts`, control-character regex needs verifying).
+Do not merge to main before: lint + prompt-safety test suites written and passing, the
+operator browser-walks the wizard on the dev server, and the docs/08 pre-flight runs on the
+wizard screens.
+
+**Next session, in order:** review and merge `wip/wizard-lint`, then the generation
+pipeline (blueprint schema, Claude tool-use call, fal.ai photo bed, compositor integration,
+credits spend per action), then the approval workspace wired to `publish-guard.ts`. Founder
+items: Stripe account (gates checkout), Meta filing status still unreported (EIN, domain,
+portfolio: ask), and the Supabase storage keys (`SUPABASE_URL`, `SUPABASE_SECRET_KEY` from
+the dashboard's connect dialog) whenever photos should move off local disk.
+
 ## Open founder decisions, carried forward
 
 1. Buy bondedcrew.com, then the sitewide rename can happen in one commit.
