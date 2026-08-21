@@ -4,7 +4,7 @@
     {
       "name": "foreman-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "/Users/mateo.canu/Projects/ignition", "run", "dev"],
+      "runtimeArgs": ["--prefix", "../../Projects/ignition", "run", "dev"],
       "port": 3000
     }
   ]
