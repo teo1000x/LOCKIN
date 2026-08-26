@@ -76,6 +76,40 @@ in `docs/24`), buy bondedcrew.com and create hello@, enable 2FA on the personal 
 then `docs/23` steps 2 and 3 (Business Portfolio as CANU Group LLC, submit verification).
 Tell the operator as each lands so the checklists get checked off.
 
+## Machine switch to WINDOWS, added 21 Aug
+
+Same model as always: git carries everything except secrets. One-time setup on Windows:
+
+```
+# 0. Install once: Git for Windows (git-scm.com, includes Git Bash and the
+#    credential manager that signs you into GitHub via browser), Node.js 22 LTS
+#    (nodejs.org), and Claude Code (claude.com/claude-code).
+# 1. In Git Bash (Start menu after installing git):
+git config --global user.name "Mateo Canu"
+git config --global user.email "mateo4canu@gmail.com"
+#    ^ do NOT skip: an unset identity is why Vercel silently blocked deploys on 20 Aug.
+git clone https://github.com/teo1000x/LOCKIN.git "$HOME/Documents/LOCK IN"
+git clone https://github.com/teo1000x/SAAS.git "$HOME/Projects/ignition"
+cd "$HOME/Projects/ignition" && npm install
+# 2. Secrets: NO AirDrop on Windows. Copy ~/Projects/ignition/.env.local from
+#    the Mac to a USB stick (Cmd+Shift+. in Finder reveals it), then place it
+#    at C:\Users\<you>\Projects\ignition\.env.local. Never chat, never email.
+# 3. Skills: extract transfer\claude-skills.zip (in this folder) into
+#    C:\Users\<you>\.claude\
+# 4. Verify: npx tsc --noEmit && npx tsx --test src/lib/__tests__/*.test.ts
+#    Expect 166 passing, 1 skipped (the live generation test skips politely).
+# 5. Open Claude Code with the LOCK IN folder as working directory:
+#    "read HANDOFF.md, pick up where we left off."
+```
+
+State at this switch (21 Aug): generation pipeline merged to main (166 tests), real
+dashboard live, wizard live behind /login. Blocked on founder: Anthropic top-up (~$20 at
+console.anthropic.com Billing) and fal.ai top-up (~$10), which gate the first live
+end-to-end generation; Stripe account; Meta filing status still unreported. Operator queue:
+compositor visual polish (long square headlines clip, medallion text can overflow the disc,
+found by the pipeline agent's probe render), then persistence + approval workspace wired to
+publish-guard (docs/25 items 8 and 9).
+
 ## Machine switch, 20 Aug evening: work machine back to home machine
 
 Git carries everything except secrets. On the home machine, in order:
