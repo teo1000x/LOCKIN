@@ -129,6 +129,26 @@ can be dropped.
 
 **Next: docs/25 item 9, the export walkthrough page.** Then Stripe (item 3) when keys land.
 
+## Session log, 25 August late: Stripe checkout built (item 3), session ended early
+
+Founder put test-mode keys in `.env.local` and called the CTA decision: pricing buys
+directly, book-a-call is the side option. Built and pushed at `4a8a847`: `/subscribe`
+(Checkout session, buy-first, org rides along when signed in), `/welcome` (server-side
+session verification, provisions through the same idempotent path as the webhook),
+`/api/stripe/webhook` (fails closed without its secret; syncs portal plan changes),
+`/api/stripe/portal`, Settings plan/billing card, pricing CTA flip. Claims table bridges
+paid-before-signup checkouts to the org on first sign-in by email; upgrades top up the
+period's credits, downgrades never claw back. Six test-mode prices created (lookup keys
+`foreman_<plan>_<period>`) via `scripts/setup-stripe-products.ts`; migration 0005 applied
+(additive). 193 tests and `next build` pass. Without Stripe env vars, /subscribe falls back
+to /book, so the production deploy is safe before the founder adds the keys to Vercel.
+
+**Not yet done, first thing next session: click through checkout end to end with the 4242
+test card** (buy-first with a fresh email, and the signed-in upgrade path), then the crafted
+signed-event webhook test, then docs/25 item 9. A local `STRIPE_WEBHOOK_SECRET` was
+generated for that test; the production one comes from the dashboard webhook endpoint at
+deploy time (add STRIPE keys to Vercel env when flipping production on).
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:
