@@ -1,6 +1,9 @@
 # Ad Creative Spec: the composited photo ad
 
-Status: v1 spec, no application code. Written 2026-08-19.
+Status: v1 spec. Written 2026-08-19; compositor built 2026-08-20. **The fixed type sizes in
+sections 1.4, 1.5, 2.1, 3.3 and 3.4 are superseded by the measured-width amendment in section
+9 (25 Aug):** the original sizes never fit this document's own calibration strings in Public
+Sans. Zone geometry, budgets-as-contract discipline, and everything else stand as written.
 
 ## 0. What this document is, and how to read a claim in it
 
@@ -1040,3 +1043,54 @@ Stated as questions rather than guessed at.
 12. **Does the founder want the medallion to be able to carry a struck-through anchor price?**
     `docs/17` records a real ad running "$49 (regularly $85)" and section 3.4 currently bans a
     strike-through inside the disc on legibility grounds. That is my call, not evidence.
+
+---
+
+## 9. Amendment, 25 August 2026: measured-width fitting
+
+Operator amendment after the first probe renders of the built compositor. The founder can veto
+any line of it; the sizes are frozen in `src/lib/composite/layout.ts` and every one is exercised
+by the test suite.
+
+**What was found.** The character budgets in 3.2 bound length but not pixels, and the fixed cap
+heights in 1.4, 1.5, 3.3 and 3.4 were set without measuring Public Sans. Rendered at the specified
+sizes, the calibration strings this document itself uses as proof of fit did not fit: "FIRST
+CLEAN" at cap 36 measures 329 units against a disc chord of 42 at its band, "$99" at cap 168
+measures 406 against a 298 chord, the word FREE at cap 116 is wider than the whole 360 disc, and
+"A CLEAN HOME. A BETTER YOU." at cap 56 measures 1255 against the 984 units between the bar
+margins, so it wrapped and clipped. A circle is narrowest exactly where the label and sub-line
+sit, which flat budgets cannot express.
+
+**What changed.** The advance widths of the exact woff files the renderer embeds are now a
+generated table (`src/lib/composite/font-metrics.ts`), and every composited run is measured
+against its zone geometry before rendering. A run inside its character cap that still measures too
+wide is a typed generation failure (`textDoesNotFit`) fed back to the copy model, exactly like an
+over-budget count. Nothing autoshrinks; the 3.1 discipline stands. The named fixed sizes were
+re-solved so that the worst legal string of each shape fits with margin:
+
+| Run | Was | Now |
+|---|---|---|
+| Figure, up to 3 glyphs ("$99") | 168 | 124 |
+| Figure, 4 to 5 glyphs, no cents ("$999") | 168 | 92 |
+| Figure, cents or 6 to 7 glyphs ("$49.95") | 132 | 72 |
+| FREE | 116 | 80 |
+| Medallion label / sub-line | unstated | 22 / 20 |
+| Headline bar | 56, no step | 56, one step to 42 on measured width |
+| Tagline step 30 to 26 | at 41 characters | on measured width |
+| T4 credential block | unstated | 36, one step to 30, block steps as one |
+| T5 tier figure | unstated | 50 (holds "$9,999" in a 3-up card) |
+| T6 season line | 40 | 40, or two wrapped lines at 32 |
+| Corner label plates (2.1) | fixed 96 by 40 | text width plus 24, minimum 96 ("BEFORE" at cap 22 is 123 wide) |
+
+Two consequences written into code rather than left implicit: a four-figure price in the
+medallion is now a typed refusal (`fourFigureInMedallion`), which 3.3 already stated in prose;
+and the portrait headline may break to two planned lines at 56 or 42, with the break computed at
+validation so the renderer draws exactly what was measured.
+
+**Why the figure shrank so much.** Cap 168 was measured off the founder's reference ad by eye.
+The reference disc is proportionally larger than the 360-unit zone C disc this spec fixed, and
+the maths does not care: at 168 the numerals plus the 62 percent currency symbol are wider than
+any chord of the disc that also holds a label and a sub-line. 124 is the largest short-figure
+size at which the full reference stack ("FIRST CLEAN" / "$99" / "3 BED HOMES") sits inside the
+circle with real margin. The probe renders before and after are the evidence; the containment
+test in `src/lib/__tests__/composite-render.test.ts` keeps it true.

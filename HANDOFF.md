@@ -76,6 +76,31 @@ in `docs/24`), buy bondedcrew.com and create hello@, enable 2FA on the personal 
 then `docs/23` steps 2 and 3 (Business Portfolio as CANU Group LLC, submit verification).
 Tell the operator as each lands so the checklists get checked off.
 
+## Session log, 25 August (Windows machine): first session, compositor fit fix
+
+Windows setup verified working: both repos cloned, `.env.local` in place and renamed, skills
+extracted, typecheck clean, tests passing. One machine quirk: Node is on the machine PATH but
+a Claude Code session launched before the install may not see it; prefix
+`C:\Program Files\nodejs` onto PATH in-session if `npx` is not found. Founder: if not done
+yet, delete `env.local` from the WIN11 USB and empty the Recycle Bin.
+
+The queued compositor polish turned out systemic, not cosmetic: probe renders showed the
+docs/19 fixed type sizes never fit the spec's own calibration strings ("FIRST CLEAN", "$99"
+and the sub-line all escaped the disc; the 27-character calibration headline wrapped and
+clipped). Fixed on main at `9305040`: real Public Sans advance widths generated from the
+shipped woff files, a pure measurement module, measured-width gates on every composited run
+with a new `textDoesNotFit` typed failure that feeds regeneration, four-figure medallion
+prices refused, and re-solved fixed sizes (figure 124/92/72 by shape, FREE 80, headline
+56 stepping to 42, T5 figure 50, season line wrapping at 32, corner plates hugging their
+text). Full reasoning and the before/after table are docs/19 section 9. 173 tests passing
+including a new pixel-containment regression test. Probe renders of T1/T2/T3/T5/T6 all
+eyeballed clean.
+
+**Next session, in order:** docs/25 item 8, persist + hash + approval workspace wired to
+`publish-guard.ts` (operator-written), then item 9, the export walkthrough page. Still
+blocked on founder: Anthropic top-up (~$20) and fal.ai top-up (~$10) gate the first live
+end-to-end generation; Stripe account gates checkout; Meta filing status still unreported.
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:
