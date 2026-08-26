@@ -101,6 +101,34 @@ eyeballed clean.
 blocked on founder: Anthropic top-up (~$20) and fal.ai top-up (~$10) gate the first live
 end-to-end generation; Stripe account gates checkout; Meta filing status still unreported.
 
+## Session log, 25 August evening: item 8 done, Track A on hold
+
+docs/25 **item 8 is DONE** and pushed (`cb5a34d`): the pipeline's artifacts persist as
+ad-variant rows whose contentHash covers copy, rendered bytes and drawn strings
+(`variant-row.ts` pure + `campaign-persist.ts`); "Build my ads" assembles intake from the
+wizard rows (`generate-campaign.ts`, offer type derived deterministically with a reason,
+photo/logo dimensions parsed from bytes, credits spent first and refunded when nothing
+lands); and the approval workspace runs per-ad approve / edit / reject through real
+`approvals` rows. Verified in the browser against the dev database: approve passes
+`assertPublishable`, editing an approved ad voids the approval and blocks the gate, a
+guarantee-word edit is refused by the deterministic lint, reject is skipped rather than an
+error. Dev tools committed: `scripts/seed-approval-workspace.ts` (seeds a walkable workspace
+for any signed-up dev user) and `scripts/check-gate.ts` (prints the gate's live decision).
+Test fixture in the dev db: user op-item8-walk@example.com, campaigns under Bright Homes
+Cleaning. Known v1 gap: generation refuses custom (category-fallback) trades with a plain
+message; the pipeline needs a category-pattern path (docs/25 item 6 scope).
+
+**FOUNDER, same day: Track A (EIN, domain, Meta verification) is ON HOLD** per the note in
+the open-decisions section. Focus is Stripe test mode plus the V1 loop. Stripe checkout
+build (docs/25 item 3) starts the moment `STRIPE_SECRET_KEY` and
+`NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` (test mode) land in `.env.local`.
+
+Windows note: launch.json gained `foreman-dev-win` (cmd wrapper that prefixes the Node dir
+onto PATH). Once Claude Code is relaunched fresh, plain `foreman-dev` works and the wrapper
+can be dropped.
+
+**Next: docs/25 item 9, the export walkthrough page.** Then Stripe (item 3) when keys land.
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:

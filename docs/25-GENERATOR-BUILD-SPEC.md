@@ -172,7 +172,7 @@ merges. YOU = founder.
 | 5 | Intake flow, ten screens per section 3, autosave, taxonomy autocomplete | AGENT | **BUILT 20 Aug**, on branch `wip/wizard-lint`, operator review pending |
 | 6 | Blueprint schema + generation pipeline stages 1-3 | AGENT for schema/prompts, OP for injection hardening and lint | Lint and prompt hardening written on `wip/wizard-lint`, tests pending; pipeline itself not started |
 | 7 | Deterministic compositor per docs/19 (zones, budgets, contrast, fallbacks) | AGENT, OP verifies determinism and hash coverage | **DONE 20 Aug**, 68 tests, byte-determinism verified. **Width gates added 25 Aug** (docs/19 section 9): probe defects fixed, all text measured against zone geometry, containment pinned by test |
-| 8 | Persist + hash + approval workspace wired to `publish-guard.ts` | OP | 6, 7 |
+| 8 | Persist + hash + approval workspace wired to `publish-guard.ts` | OP | **DONE 25 Aug**, browser-walked against the dev database: approve writes real approval rows, editing voids approval and re-lints, the gate blocks and passes exactly per publish-decision. Live end-to-end generation still gated by the API top-ups |
 | 9 | Export walkthrough page with Copy buttons and AI disclosure | AGENT | 8 |
 | 10 | Dashboard home: credits, empty states, measured/reported labelling | AGENT | 3 |
 | 11 | End-to-end run of acceptance steps 1-9 (`ROADMAP.md` A-Z test) by a real person | YOU | all |

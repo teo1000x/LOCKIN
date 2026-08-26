@@ -6,6 +6,15 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "../../Projects/ignition", "run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "foreman-dev-win",
+      "runtimeExecutable": "C:\\Windows\\System32\\cmd.exe",
+      "runtimeArgs": [
+        "/c",
+        "set PATH=C:\\Program Files\\nodejs;%PATH% && npm --prefix ..\\..\\Projects\\ignition run dev"
+      ],
+      "port": 3000
     }
   ]
 }
