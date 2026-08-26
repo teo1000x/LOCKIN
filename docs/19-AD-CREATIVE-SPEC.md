@@ -683,7 +683,14 @@ Four reasons, three of them sourced.
 
 The exclusion clause is therefore mandatory on every prompt, in these words or equivalent: no
 text, no letters, no numbers, no signage, no logos, no watermarks, no brand marks on vehicles or
-uniforms, no readable licence plates.
+uniforms, no readable licence plates, no printing or embroidery on clothing, no name tags, no
+patches, no labels on bottles, products or equipment.
+
+**Amended 26 August 2026, from the first live render:** the image model put garbled
+pseudo-text on a worker's uniform despite the original clause, so the clause gained the
+clothing and product terms above, and every prompt also carries a POSITIVE clothing sentence
+right after the subject ("Work clothing is plain solid-colour fabric, completely blank"),
+because describing the plain garment is more reliable than only forbidding print on it.
 
 ### 5.5 Worked example, mechanical (HVAC tune-up, T2)
 
