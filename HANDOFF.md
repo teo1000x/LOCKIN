@@ -149,6 +149,35 @@ signed-event webhook test, then docs/25 item 9. A local `STRIPE_WEBHOOK_SECRET` 
 generated for that test; the production one comes from the dashboard webhook endpoint at
 deploy time (add STRIPE keys to Vercel env when flipping production on).
 
+## Session log, 26 August: checkout verified E2E, item 9 built and verified
+
+**Checkout is DONE (docs/25 item 3).** Buy-first verified in the browser with the test card:
+fresh-email purchase landed on the unclaimed welcome branch and attached Grow plus 1,600
+credits on first sign-in. The founder had already self-tested the signed-in path the night
+before (op-item8-walk bought Grow: 400 grant + 1,200 top-up correct) and had also exercised
+the failed-generation refund (100 credits spent, refunded, ledger clean). Two fixes shipped
+from the walk (`37b670c`): Home and Settings claim pending checkouts before reading balance
+(layout and page render in parallel; a just-paid buyer briefly saw the pre-claim balance),
+and /subscribe now refuses an org that already has a subscription (double-billing hole,
+proven live). Webhook signature self-test passes: bad sig 400, valid event 200, missing
+header 400 (`scripts/test-webhook.ts`).
+
+**Item 9 is DONE (`c17171c`).** Export walkthrough at /app/campaigns/[id]/export: opens
+through assertPublishable (blocked campaigns get the gate's reasons as a screen), pure step
+planner in `src/lib/export-steps.ts`, Copy button on every Meta field value, creatives
+download under recognisable names, AI Info disclosure step always present per
+IMG-AI-DISCLOSURE-01, step completion persisted on the campaign row (migration 0006,
+additive), stuck-on-something section, owner-reported live check-in that flips the campaign
+chip. Browser-walked E2E including persistence across reload. 199 tests passing.
+Post-v1 gaps, deliberate: no ZIP download, no Ads Manager screenshots (text directions plus
+a visible last-verified date instead), docs/11 G names both.
+
+**Remaining to a testable V1 loop:** the Anthropic (~$20) and fal.ai (~$10) top-ups are now
+the ONLY blockers to running the whole thing end to end: buy, wizard, generate, approve,
+export. Then docs/25 item 11, the founder's A-Z acceptance run. Operator queue after that:
+item 10 dashboard polish is largely in place; revisit docs/25 checklist. Known gap carried:
+generation refuses custom (category-fallback) trades.
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:

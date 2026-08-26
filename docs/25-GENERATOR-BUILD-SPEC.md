@@ -167,13 +167,13 @@ merges. YOU = founder.
 | 0 | Keys into `.env.local`: DATABASE_URL, ANTHROPIC_API_KEY, FAL_KEY | YOU | **DONE 20 Aug**, all three verified working |
 | 1 | Site fixes batch (section 7) | AGENT | **DONE 20 Aug**, deployed and verified on production |
 | 2 | Provision Postgres, first migration runs, booking pipeline lights up | YOU + OP | **DONE 20 Aug** (Supabase, 4 migrations applied) |
-| 3 | Better Auth + organizations (DONE 20 Aug, live on production); Stripe checkout, webhook, billing portal (waiting on founder's Stripe account) | AGENT, OP reviews | Stripe keys |
+| 3 | Better Auth + organizations (DONE 20 Aug, live on production); Stripe checkout, webhook, billing portal | AGENT, OP reviews | **DONE 26 Aug** in test mode, built by OP: buy-first checkout verified E2E with the test card (both the fresh-email and signed-in paths), webhook signature-verified, billing portal wired, one-subscription-per-org guard. Production needs the Stripe env vars in Vercel plus a dashboard webhook endpoint at launch |
 | 4 | Credits ledger + metering module + per-org ceilings | OP | **DONE 20 Aug**, 8 tests |
 | 5 | Intake flow, ten screens per section 3, autosave, taxonomy autocomplete | AGENT | **BUILT 20 Aug**, on branch `wip/wizard-lint`, operator review pending |
 | 6 | Blueprint schema + generation pipeline stages 1-3 | AGENT for schema/prompts, OP for injection hardening and lint | Lint and prompt hardening written on `wip/wizard-lint`, tests pending; pipeline itself not started |
 | 7 | Deterministic compositor per docs/19 (zones, budgets, contrast, fallbacks) | AGENT, OP verifies determinism and hash coverage | **DONE 20 Aug**, 68 tests, byte-determinism verified. **Width gates added 25 Aug** (docs/19 section 9): probe defects fixed, all text measured against zone geometry, containment pinned by test |
 | 8 | Persist + hash + approval workspace wired to `publish-guard.ts` | OP | **DONE 25 Aug**, browser-walked against the dev database: approve writes real approval rows, editing voids approval and re-lints, the gate blocks and passes exactly per publish-decision. Live end-to-end generation still gated by the API top-ups |
-| 9 | Export walkthrough page with Copy buttons and AI disclosure | AGENT | 8 |
+| 9 | Export walkthrough page with Copy buttons and AI disclosure | AGENT | **DONE 26 Aug**, built by OP: gate-checked via assertPublishable, Copy button per Meta field, AI Info step structurally always present, step completion persisted, browser-walked E2E. Post-v1 gaps noted in the session log: ZIP download, real Ads Manager screenshots |
 | 10 | Dashboard home: credits, empty states, measured/reported labelling | AGENT | 3 |
 | 11 | End-to-end run of acceptance steps 1-9 (`ROADMAP.md` A-Z test) by a real person | YOU | all |
 | 12 | A4 screencast recorded against the working flow; App Review filed | YOU + OP | 11, Track A steps 1-4 done |
