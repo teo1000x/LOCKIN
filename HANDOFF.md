@@ -190,9 +190,16 @@ the dashboard's connect dialog) whenever photos should move off local disk.
 
 ## Open founder decisions, carried forward
 
-1. Buy bondedcrew.com, then the sitewide rename can happen in one commit.
+**FOUNDER, 25 Aug: Track A is ON HOLD.** The EIN, the bondedcrew.com purchase, and the whole
+Meta Business Portfolio / Business Verification chain (decisions 1 and 2 below) wait until
+the founder says go. Consequence, stated once: the two Meta review queues are roughly 8 to 12
+weeks and only start when filed, so publishing-to-Meta moves out by at least that long from
+whenever the hold lifts. The export walkthrough path does not depend on Meta and stays the
+v1 terminal step. Current focus: Stripe test mode end to end, then the V1 loop.
+
+1. Buy bondedcrew.com, then the sitewide rename can happen in one commit. ON HOLD.
 2. EIN for CANU Group LLC, then Business Portfolio + Business Verification + dev app
-   (`docs/23` and `docs/24`, tomorrow morning's job).
+   (`docs/23` and `docs/24`). ON HOLD.
 3. Fill .env.local: DATABASE_URL (Supabase pooler), ANTHROPIC_API_KEY, contact email/phone.
 4. Sold-out Starter tier: keep, flip, or real count (docs/20 crack 2).
 5. Authorise-do-not-charge risk reversal: yes or no (docs/20 section 3.1).
