@@ -91,9 +91,12 @@ git config --global user.email "mateo4canu@gmail.com"
 git clone https://github.com/teo1000x/LOCKIN.git "$HOME/Documents/LOCK IN"
 git clone https://github.com/teo1000x/SAAS.git "$HOME/Projects/ignition"
 cd "$HOME/Projects/ignition" && npm install
-# 2. Secrets: NO AirDrop on Windows. Copy ~/Projects/ignition/.env.local from
-#    the Mac to a USB stick (Cmd+Shift+. in Finder reveals it), then place it
-#    at C:\Users\<you>\Projects\ignition\.env.local. Never chat, never email.
+# 2. Secrets: already copied to the founder's WIN11 USB drive on 25 Aug as a
+#    VISIBLE file named env.local (no leading dot). Copy it into
+#    C:\Users\<you>\Projects\ignition\ then rename it in Git Bash:
+#      mv "$HOME/Projects/ignition/env.local" "$HOME/Projects/ignition/.env.local"
+#    Delete env.local from the USB afterwards and empty the Recycle Bin.
+#    Never chat, never email.
 # 3. Skills: extract transfer\claude-skills.zip (in this folder) into
 #    C:\Users\<you>\.claude\
 # 4. Verify: npx tsc --noEmit && npx tsx --test src/lib/__tests__/*.test.ts
