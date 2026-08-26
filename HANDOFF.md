@@ -178,6 +178,41 @@ export. Then docs/25 item 11, the founder's A-Z acceptance run. Operator queue a
 item 10 dashboard polish is largely in place; revisit docs/25 checklist. Known gap carried:
 generation refuses custom (category-fallback) trades.
 
+## Session log, 26 August, later: FIRST LIVE GENERATION SHIPPED
+
+The founder topped up both APIs and the first live end-to-end generation ran on their own
+draft campaign (pressure washing, $99 first clean, 90034): **4 real ads persisted through
+the full pipeline** into the approval workspace, 2 of 6 briefs set aside by the policy
+gates, workspace says so honestly. Successful-run cost about $0.86; total API spend across
+all debugging about $2.12. Committed at `f7f6869`.
+
+Three first-contact failures fixed, each invisible until real API money flowed:
+1. The blueprint schema's compiled grammar exceeds Anthropic's strict structured-output
+   limit; structuredCall now degrades per schema to plain JSON with the schema in-prompt.
+2. Sonnet 5's default thinking spent the entire 16k output budget before any JSON;
+   thinking is now explicitly disabled on schema-filling calls.
+3. The compositor's font path broke under Turbopack's virtual paths; cwd fallback plus
+   outputFileTracingIncludes for deploy.
+Plus the validation whack-a-mole: over-budget OPTIONAL fields and empty-string expiries are
+now pruned deterministically before validation (delete, never shrink, per docs/19), so
+blueprints land on the first or second attempt instead of burning three.
+
+**Quality findings for the operator queue, from eyeballing the first real creative:**
+1. fal (flux/dev) drew garbled pseudo-text on the cleaner's uniform despite the mandatory
+   no-text exclusion clause. Recurring image-model failure mode; consider a stronger
+   negative prompt, a different model, or a text-detection check before compositing.
+2. The model used T4's credential block for offer-scope lines ("$99 COVERS 3 ROOMS...")
+   rather than credentials. Reads honestly but is not what docs/19 2.4 intends; consider
+   tightening the schema or prompt so T4's three lines are credential-shaped.
+3. Only 4 of 6 briefs survived; the drop reasons are in the pipeline's typed report but are
+   not yet persisted anywhere an operator can read after the fact. Consider logging dropped
+   variants to activityLog metadata.
+
+**Next: the founder reviews the 4 live-generated ads in the workspace** (approve / edit /
+reject), walks the export page against real Ads Manager, and that is docs/25 item 11, the
+A-Z acceptance run. The V1 loop is now fully runnable: buy, wizard, generate, approve,
+export.
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:
