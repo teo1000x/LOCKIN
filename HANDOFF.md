@@ -213,6 +213,30 @@ reject), walks the export page against real Ads Manager, and that is docs/25 ite
 A-Z acceptance run. The V1 loop is now fully runnable: buy, wizard, generate, approve,
 export.
 
+## Session log, 26 August evening: A-Z review started, two findings fixed live
+
+The founder began the item 11 walk in their own browser. Two findings, both fixed and
+pushed the same hour:
+1. **No sign-in link existed anywhere on the marketing site** (login was URL-only). Quiet
+   "Sign in" link added to the header and mobile nav (`eb13259`).
+2. **A no-stated-offer campaign failed generation three times** (founder's stump-removal
+   campaign: no dollar figure, no "free", a money-back line). Each attempt was near-valid.
+   Fixed with blueprint salvage: core validated alone, briefs validated individually, four
+   or more survivors proceed and the rest count into the owner-facing set-aside message;
+   plus an explicit no-stated-offer brief in the prompt (`f5ad120`, 208 tests).
+
+Also this session, earlier: production probe confirmed Vercel runs current main with the
+designed degrades (subscribe falls back to /book without Stripe env). Production stays
+dark on purpose until the founder's review pass is done; the flip-on checklist is Stripe
+env vars + dashboard webhook endpoint, ANTHROPIC_API_KEY + FAL_KEY, and SUPABASE_URL +
+SUPABASE_SECRET_KEY (storage is REQUIRED in prod, local disk is ephemeral on Vercel).
+
+**Operator queue, held from the quality findings:** fal pseudo-text on generated images
+(hardening or model change), dropped-variant reasons not visible after the fact, T4
+credential block filled with scope lines, regenerate-per-variant button, custom-trade
+generation. **Founder queue:** finish the A-Z walk (approve/edit/reject the live ads,
+walk the export page against real Ads Manager), report findings in plain words.
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:
