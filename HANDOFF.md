@@ -237,6 +237,36 @@ credential block filled with scope lines, regenerate-per-variant button, custom-
 generation. **Founder queue:** finish the A-Z walk (approve/edit/reject the live ads,
 walk the export page against real Ads Manager), report findings in plain words.
 
+## Session log, 26 August night: FOUNDER DECLARED THE DESIGN PIVOT
+
+Shipped first: set-aside visibility (per-drop reasons persisted to the generated activity
+entry and rendered as a details block on the workspace) and the docs/19 5.4 clothing
+amendment (probe-verified blank uniform), both pushed (`7c154fb`). The regenerate button
+was next in queue and is now PARKED.
+
+**The pivot, in the founder's words: V1 works and they are proud of it, but it "feels like
+AI slop, the generic UI of a vibe-coded site." The priority is now feel, UI/UX, design,
+colour and typography, across landing and app.** The agreed approach, in order:
+1. Audit pass: screenshot every screen, name what is generic on each (redesign-skill).
+2. Three genuinely different direction boards from research (agencies, premium B2B, brands
+   tradespeople respect: Carhartt / DeWalt / Milwaukee energy, not YC-SaaS cobalt).
+3. Rewrite docs/08 to the chosen direction FIRST (it is binding), then implement to it.
+4. Landing page pass, then app pass.
+
+**Blocked on three founder answers, asked 26 Aug:** (1) 3 to 5 references they think look
+great and why; (2) the one feeling a roofer should have five seconds after landing;
+(3) whether to lock the product name before identity work (Foreman is a placeholder;
+Bonded Crew is the standing recommendation, domain unbought). Do not start direction
+boards without at least the name answer; identity work under a throwaway name is done
+twice.
+
+**Demo-mode positioning, founder-approved intent with one correction:** make the interim
+story loud and confident on the redesigned landing ("Direct publishing to Meta is in the
+works; until it ships, every plan includes the guided posting walkthrough"), possibly with
+a real look-inside demo for prospects. NEVER phrase it as "almost done getting Meta
+verification": verification has not been filed (Track A hold is the founder's own), and a
+false progress claim breaks rule 3. The honest wording above sells fine.
+
 ## Machine switch to WINDOWS, added 21 Aug
 
 Same model as always: git carries everything except secrets. One-time setup on Windows:
