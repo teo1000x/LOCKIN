@@ -237,6 +237,29 @@ credential block filled with scope lines, regenerate-per-variant button, custom-
 generation. **Founder queue:** finish the A-Z walk (approve/edit/reject the live ads,
 walk the export page against real Ads Manager), report findings in plain words.
 
+## Session log, 1 September: image model upgraded, a stranded build, wizard V2 notes
+
+Founder reviewed image quality; three-way probe on one brief settled it: **flux-pro/v1.1
+beats flux/dev and beats prompt-only realism tweaks** (machine anatomy, action, light).
+Switched via FAL_MODEL in .env.local, metered at a ceiling rate (`95631db`). Verify fal's
+real pro rate at launch.
+
+**Incident, operator-caused:** restarting the dev server for that switch killed the
+founder's in-flight build mid-variant; the campaign stuck at "generating" with 100 credits
+spent, no refund (the refund lives in a catch that never ran; the process died). Recovered
+by hand: reset to draft, credits refunded with an honest ledger note. **Queue item, raised
+priority: generation must survive restarts and reloads** - either the docs/02 Inngest move
+or, minimum, a stuck-build sweeper (generating + no usage rows for ~10 minutes = reset and
+refund automatically) plus the generating screen polling instead of asking for reloads.
+
+**Founder V2 wizard feedback, verbatim intent:** the questionnaire should feel richer and
+smarter, not "super basic": possibly all on one page, per-industry recommended settings
+shown as recommendations, more detail, more distinctive controls and metrics. Noted for the
+design pivot: the per-trade smarts (radius defaults, offer suggestions, budget arithmetic)
+already exist in code but are nearly invisible in the UI; surfacing them as visible
+"recommended for roofing" intelligence is the cheap half of what the founder wants. The
+one-page-versus-per-screen question belongs to the docs/22 revisit inside the pivot.
+
 ## Session log, 26 August night: FOUNDER DECLARED THE DESIGN PIVOT
 
 Shipped first: set-aside visibility (per-drop reasons persisted to the generated activity
