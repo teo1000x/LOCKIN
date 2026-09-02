@@ -324,6 +324,13 @@ If any box is unchecked, the page does not ship.
 
 ## Amendment log
 
+- **2 September 2026, motion exception (founder request):** the marketing evidence figures
+  may count up once on first entry into view, 800ms ease-out, final value server-rendered so
+  no-JS and crawlers see the real number, static under reduced motion, numeric values only.
+  This is the single sanctioned scroll-triggered animation on the site; it does not open the
+  door to reveals, parallax, or any other scroll choreography. Implemented in
+  `src/components/CountUp.tsx`.
+
 - **19 August 2026** (v1): light-only lock; two type scales; standing bans confirmed. All
   three carried into the v2 body above.
 - **2 September 2026** (this version): direction pivot to High-Vis Precision light, founder
