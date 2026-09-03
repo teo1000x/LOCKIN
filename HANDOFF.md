@@ -237,6 +237,32 @@ credential block filled with scope lines, regenerate-per-variant button, custom-
 generation. **Founder queue:** finish the A-Z walk (approve/edit/reject the live ads,
 walk the export page against real Ads Manager), report findings in plain words.
 
+## Session log, 2 September: reskin shipped, signup band live, founder travelling
+
+**Founder is in Australia; standing instruction: keep working autonomously, push phone
+notifications only when something needs them.** Sign-in for their remote demos: the live
+site (saas-eight-ebon-56.vercel.app) accepts op-item8-walk@example.com /
+fixture-walk-2608; ad images do not render there (local-disk storage) and build/checkout
+stay dark by design.
+
+Shipped this session, all pushed (`5ab957e` through `7d90f22`):
+- **docs/08 v2 implemented across the whole product**: navy ink + blaze orange under the
+  three orange laws, Archivo at signage weight, radius 4/8/12, focus rings on accent-active,
+  count-up on the evidence figures (recorded motion exception), crosshair wordmark, corner
+  ticks on instrument surfaces, one hot word in the hero.
+- **Pricing cards**: highlight and button fill follow the cursor, Grow holds the border at
+  rest, CTAs pinned to one line, Starter got the missing book-a-call path. Trade-off flagged
+  to the founder: no orange button at rest on touch devices.
+- **Updates signup**: update_signups table (migration 0007), idempotent POST /api/updates,
+  the ink band between FAQ and footer with the honest interim story, list in /admin/leads.
+  Works in production (shared DB).
+
+**Open with the founder:** early-access pricing numbers; the name; the count of findings
+from their live-site demo walk. **Operator queue:** reskin passes for the app inner screens
+(wizard, workspace, export still carry only the token swap), restart-surviving generation
+(raised priority after the stranded build), regenerate button, founder admin build-out,
+production switch-on checklist.
+
 ## Session log, 1 September: image model upgraded, a stranded build, wizard V2 notes
 
 Founder reviewed image quality; three-way probe on one brief settled it: **flux-pro/v1.1
