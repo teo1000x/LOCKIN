@@ -336,3 +336,10 @@ If any box is unchecked, the page does not ship.
 - **2 September 2026** (this version): direction pivot to High-Vis Precision light, founder
   decision after the three-board review. Cobalt accent, Public Sans, cool-grey ramp and the
   16px card radius are superseded. The founder's layout lock is recorded in the header.
+- **3 September 2026, mechanical gate added:** the AJ.on.AI anti-slop checker
+  (`node ~/.claude/skills/anti-slop-ajonai/scripts/check.mjs src/`) runs before any UI
+  ships and must report zero errors; warnings are triaged, advisories are read. Its
+  decision-sheet method (subject, ground, palette, type, space, shape, motion, signature)
+  is used before any new screen is designed when the reskin resumes. Two of its positions
+  do not override this project: the em-dash ban (AGENTS.md rule 7) and the founder's
+  typeface decisions stand; the skill itself says the brief outranks it.
