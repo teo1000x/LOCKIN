@@ -426,3 +426,16 @@ v1 terminal step. Current focus: Stripe test mode end to end, then the V1 loop.
 Auth with organizations, then the six-question intake wizard (`docs/22`) on the 96-trade
 taxonomy, then the generation pipeline with per-org cost metering, then the approval UI on the
 existing gate, then Stripe, then Meta OAuth and publishing against a dev app while review runs.
+
+## Session log, 3 September: RESKIN PAUSED, founder starting a real pressure-washing business
+
+Founder, from Australia: put the reskin on hold; the focus is now starting an actual
+pressure-washing business (physical houses). Reskin state at the pause: docs/08 v2 is
+implemented on the landing page and tokens across the app; the app's inner screens carry
+the token swap only. Nothing is half-done in the code; it can resume any time.
+
+The strategic read: this is the first real customer, and it is us. A real business running
+real ads through the product produces the one thing the product has never had, real
+measured results (AGENTS.md rule 3 currently forces "show no numbers"), plus a real Meta ad
+account and business for the Track A filings later. Scope and location to be confirmed with
+the founder before any build or research starts.
