@@ -439,3 +439,15 @@ real ads through the product produces the one thing the product has never had, r
 measured results (AGENTS.md rule 3 currently forces "show no numbers"), plus a real Meta ad
 account and business for the Track A filings later. Scope and location to be confirmed with
 the founder before any build or research starts.
+
+**3 September, later:** location is Surfers Paradise, Queensland. Cash-first plan: sell
+pressure washing door to door (canal suburbs: Isle of Capri, Benowa Waters, Broadbeach
+Waters, Mermaid Waters) and to businesses (strata managers, property managers, holiday rental
+managers, hotels, cafes), subcontract the work at a fixed price, keep the margin. Founder's
+field playbook is a published artifact, "Knock and Book"
+(https://claude.ai/code/artifact/5d2d6104-5b7f-416f-a49b-23e108d4de2b), with the Gold Coast
+section, the ABN explainer, the door script built around the ACL cooling-off rule (customer
+replies "yes" to book), and the AUD price table. A B2B call list of publicly listed business
+contacts is being compiled by three research agents (strata, shopfronts, venues) into a
+second artifact. Open questions to the founder: which partner is an Australian resident with
+work rights (holds the ABN and invoices), car or on foot, first subbie quotes.
