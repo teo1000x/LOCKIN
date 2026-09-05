@@ -451,3 +451,28 @@ replies "yes" to book), and the AUD price table. A B2B call list of publicly lis
 contacts is being compiled by three research agents (strata, shopfronts, venues) into a
 second artifact. Open questions to the founder: which partner is an Australian resident with
 work rights (holds the ABN and invoices), car or on foot, first subbie quotes.
+
+**4 September, on hold.** The call list finished: 135 rows across 21 categories, published to
+https://claude.ai/code/artifact/10cfc31c-8e1f-4176-a646-7a537b2ce8f4 (strata and property
+managers first, then holiday rentals, centre management, hotels and surf clubs, then the
+walking strips: Tedder Ave, Surf Parade and Victoria Ave, Cavill Ave, Chevron Island). 126
+phones, 80 emails, every row sourced, no invented contact names. Source JSON and the build
+script are in the session scratchpad only, not committed, since the rows are public listings
+that go stale.
+
+Founder put everything on hold on 4 September. Nothing is mid-flight in either repo; both are
+clean and pushed. Two workstreams are parked and either can resume cold:
+
+- **Pressure washing (Surfers Paradise).** Both artifacts are done and live. Blocked only on
+  founder answers: which partner is an Australian resident with work rights (holds the ABN,
+  invoices, receiving account), car or on foot, and the first two subbie quotes so the price
+  table stops being an estimate.
+- **The product.** Reskin paused mid-way (landing page on docs/08 v2, app inner screens carry
+  the token swap only). Code queue in order: generation must survive a server restart plus a
+  stuck-build sweeper (raised priority after the 1 Sep stranded build), regenerate-per-variant,
+  founder admin, custom-trade generation, then the production switch-on checklist (Stripe live
+  keys and dashboard webhook, ANTHROPIC_API_KEY, FAL_KEY, SUPABASE_URL and SUPABASE_SECRET_KEY,
+  since Vercel's disk is ephemeral and storage is required in prod).
+
+Older open decisions still carried: product name (Foreman placeholder vs Bonded Crew), which
+gates the rename commit and all identity work, and the Track A filing hold.
